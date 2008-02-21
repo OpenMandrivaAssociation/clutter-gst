@@ -1,6 +1,6 @@
 %define name clutter-gst
 %define version 0.6.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define api 0.6
 %define major 0
@@ -21,7 +21,8 @@ BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk-doc
 
 %description
-GST video texture actor and audio player object for Clutter
+An integration library for using GStreamer with Clutter.
+GST video texture actor and audio player object.
 
 #----------------------------------------------------------------------------
 
@@ -31,7 +32,8 @@ Group:         Graphics
 Requires:      gstreamer0.10-plugins-base
 
 %description -n %libname
-GST video texture actor and audio player object for Clutter
+An integration library for using GStreamer with Clutter.
+GST video texture actor and audio player object.
 
 #----------------------------------------------------------------------------
 
