@@ -1,6 +1,6 @@
 %define name clutter-gst
 %define version 0.6.1
-%define release %mkrel 2
+%define release %mkrel 4
 
 %define api 0.6
 %define major 0
