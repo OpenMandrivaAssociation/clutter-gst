@@ -1,11 +1,15 @@
 %define name clutter-gst
-%define version 0.6.1
-%define release %mkrel 4
+%define version 0.8.0
+%define release %mkrel 1
 
-%define api 0.6
+%define api 0.8
 %define major 0
 %define libname %mklibname %name %api %major
 %define libnamedevel %mklibname -d %name %api
+
+# (cg) Do this for now, but fix propperly later.
+%define _disable_ld_no_undefined 1
+%define _disable_ld_as_needed 1
 
 Summary:       GST video texture actor and audio player object for Clutter
 Name:          %{name}
