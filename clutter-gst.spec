@@ -1,26 +1,22 @@
 %define name clutter-gst
-%define version 0.8.0
+%define version 0.9.0
 %define release %mkrel 1
 
-%define api 0.8
+%define api 0.9
 %define major 0
 %define libname %mklibname %name %api %major
 %define libnamedevel %mklibname -d %name %api
-
-# (cg) Do this for now, but fix propperly later.
-%define _disable_ld_no_undefined 1
-%define _disable_ld_as_needed 1
 
 Summary:       GST video texture actor and audio player object for Clutter
 Name:          %{name}
 Version:       %{version}
 Release:       %{release}
-Source0:       %{name}-%{version}.tar.bz2
-License:       LGPL
+Source0:       http://www.clutter-project.org/sources/clutter-gst/%api/%{name}-%{version}.tar.bz2
+License:       LGPLv2+
 Group:         Graphics
 Url:           http://clutter-project.org/
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: clutter-devel
+BuildRequires: clutter-devel >= 0.9.6
 BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk-doc
 
@@ -56,20 +52,20 @@ Development headers/libraries for %name (see %libname package)
 %setup -q
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
 rm -rf %buildroot
 
-%makeinstall
+%makeinstall_std
 
 %clean
 rm -rf %buildroot
 
 %files -n %libname
 %defattr(-,root,root)
-%_libdir/lib%{name}-%{api}.so.*
+%_libdir/lib%{name}-%{api}.so.%{major}*
 
 %files -n %libnamedevel
 %_libdir/pkgconfig/%{name}-%{api}.pc
