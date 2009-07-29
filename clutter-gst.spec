@@ -1,8 +1,9 @@
 %define name clutter-gst
-%define version 0.9.0
+%define version 0.10.0
 %define release %mkrel 1
 
-%define api 0.9
+%define api 0.10
+%define clutterapi 1.0
 %define major 0
 %define libname %mklibname %name %api %major
 %define libnamedevel %mklibname -d %name %api
@@ -16,7 +17,7 @@ License:       LGPLv2+
 Group:         Graphics
 Url:           http://clutter-project.org/
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: clutter-devel >= 0.9.6
+BuildRequires: clutter-devel >= 1.0.0
 BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk-doc
 
@@ -71,7 +72,7 @@ rm -rf %buildroot
 %_libdir/pkgconfig/%{name}-%{api}.pc
 %_libdir/lib%{name}-%{api}.la
 %_libdir/lib%{name}-%{api}.so
-%dir %_includedir/clutter-%{api}/%{name}
-%_includedir/clutter-%{api}/%{name}/*.h
+%dir %_includedir/clutter-%{clutterapi}/%{name}
+%_includedir/clutter-%{clutterapi}/%{name}/*.h
 %dir %_datadir/gtk-doc/html/%name
 %doc %_datadir/gtk-doc/html/%name/*
