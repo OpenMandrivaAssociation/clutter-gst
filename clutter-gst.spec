@@ -20,7 +20,7 @@ BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: clutter-devel >= 1.0.0
 BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtk-doc
-BuildRequires: docbook-dtd421-xml
+BuildRequires: docbook-dtd412-xml
 
 %description
 An integration library for using GStreamer with Clutter.
