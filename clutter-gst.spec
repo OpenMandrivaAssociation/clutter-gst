@@ -1,6 +1,6 @@
 %define name clutter-gst
 %define version 1.2.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define api 1.0
 %define clutterapi 1.0
