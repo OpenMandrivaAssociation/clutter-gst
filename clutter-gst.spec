@@ -1,6 +1,6 @@
 %define name clutter-gst
-%define version 1.2.0
-%define release %mkrel 2
+%define version 1.3.6
+%define release %mkrel 1
 
 %define api 1.0
 %define clutterapi 1.0
@@ -13,15 +13,13 @@ Name:          %{name}
 Version:       %{version}
 Release:       %{release}
 Source0:       http://www.clutter-project.org/sources/clutter-gst/%api/%{name}-%{version}.tar.bz2
-Patch0:        0001-build-Fix-missing-include-stdlib.h-for-EXIT_SUCCESS-.patch
-Patch1:        0001-moblin-Install-the-video-player.patch
-Patch2:        use-clutter-1.4.patch
 License:       LGPLv2+
 Group:         Graphics
 Url:           http://clutter-project.org/
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: clutter-devel >= 1.0.0
+BuildRequires: clutter-devel >= 1.4.0
 BuildRequires: libgstreamer-plugins-base-devel
+BuildRequires: gobject-introspection-devel >= 0.6.8
 BuildRequires: gtk-doc
 BuildRequires: docbook-dtd412-xml
 
@@ -47,14 +45,6 @@ Requires:      %libname = %{version}-%{release}
 %description -n %libnamedevel
 Development headers/libraries for %name (see %libname package)
 
-%package tests
-Summary:       Some test programs for clutter-gst
-Group:         Development/Libraries
-Requires:      %libname = %{version}-%{release}
-
-%description tests
-Small test programs
-
 %package doc
 Summary:       API reference for clutter-gst
 Group:         Documentation
@@ -64,12 +54,8 @@ Documentation for Clutter-Gst
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
-autoreconf
 %configure2_5x \
   --disable-static \
   --enable-gtk-doc \
@@ -96,11 +82,6 @@ rm -Rf %{buildroot}
 %dir %{_includedir}/clutter-%{clutterapi}/%{name}
 %{_includedir}/clutter-%{clutterapi}/%{name}/*.h
 %{_datadir}/gir-1.0/ClutterGst-1.0.gir
-
-%files tests
-%defattr(-,root,root,-)
-%{_bindir}/clutter-gst-*
-%{_datadir}/clutter-gst/*
 
 %files doc
 %defattr(-,root,root,-)
