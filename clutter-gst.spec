@@ -1,5 +1,5 @@
 %define name clutter-gst
-%define version 1.3.6
+%define version 1.3.8
 %define release %mkrel 1
 
 %define api 1.0
@@ -17,7 +17,7 @@ License:       LGPLv2+
 Group:         Graphics
 Url:           http://clutter-project.org/
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: clutter-devel >= 1.4.0
+BuildRequires: clutter-devel >= 1.6.14
 BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gobject-introspection-devel >= 0.6.8
 BuildRequires: gtk-doc
