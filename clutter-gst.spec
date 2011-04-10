@@ -47,7 +47,7 @@ Development headers/libraries for %name (see %libname package)
 
 %package doc
 Summary:       API reference for clutter-gst
-Group:         Documentation
+Group:         Development/Other
 
 %description doc
 Documentation for Clutter-Gst
