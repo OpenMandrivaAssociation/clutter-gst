@@ -1,5 +1,5 @@
 %define name clutter-gst
-%define version 1.3.8
+%define version 1.3.12
 %define release %mkrel 1
 
 %define api 1.0
@@ -12,7 +12,7 @@ Summary:       GST video texture actor and audio player object for Clutter
 Name:          %{name}
 Version:       %{version}
 Release:       %{release}
-Source0:       http://www.clutter-project.org/sources/clutter-gst/%api/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 License:       LGPLv2+
 Group:         Graphics
 Url:           http://clutter-project.org/
