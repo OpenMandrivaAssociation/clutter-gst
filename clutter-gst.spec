@@ -75,6 +75,7 @@ find %{buildroot} -name *.la | xargs rm
 
 %files -n %{libname}
 %{_libdir}/lib%{name}-%{api}.so.%{major}*
+%{_libdir}/gstreamer-0.10/libgstclutter.so
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/ClutterGst-1.0.typelib
