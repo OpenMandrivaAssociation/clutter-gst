@@ -17,6 +17,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.x
 BuildRequires: gtk-doc
 BuildRequires: docbook-dtd412-xml
 BuildRequires: pkgconfig(clutter-1.0)
+BuildRequires: pkgconfig(gl)
 BuildRequires: pkgconfig(gobject-introspection-1.0)
 BuildRequires: pkgconfig(gstreamer-plugins-base-0.10)
 
