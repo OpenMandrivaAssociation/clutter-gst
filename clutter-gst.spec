@@ -7,27 +7,27 @@
 
 Summary:	GST video texture actor and audio player object for Clutter
 Name:		clutter-gst
-Version:	1.4.6
+Version:	1.5.4
 Release:	1
 License:	LGPLv2+
 Group:		Graphics
 Url:		http://clutter-project.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 
-BuildRequires: clutter-devel >= 1.6.14
-BuildRequires: libgstreamer-plugins-base-devel
-BuildRequires: gobject-introspection-devel >= 0.6.8
 BuildRequires: gtk-doc
 BuildRequires: docbook-dtd412-xml
+BuildRequires: pkgconfig(clutter-1.0)
+BuildRequires: pkgconfig(gobject-introspection-1.0)
+BuildRequires: pkgconfig(gstreamer-plugins-base-0.10)
 
 %description
 An integration library for using GStreamer with Clutter.
 GST video texture actor and audio player object.
 
 %package -n %{libname}
-Summary:       GST video texture actor and audio player object for Clutter
-Group:         Graphics
-Requires:      gstreamer0.10-plugins-base
+Summary:	GST video texture actor and audio player object for Clutter
+Group:		Graphics
+Requires:	gstreamer0.10-plugins-base
 
 %description -n %{libname}
 An integration library for using GStreamer with Clutter.
@@ -36,8 +36,6 @@ GST video texture actor and audio player object.
 %package -n %{girname}
 Summary:	GObject Introspection interface description for %{name}
 Group:		System/Libraries
-Provides:	%{mklibname %{name}-gir %{girmajor}} = %{version}-%{release}
-Requires:	%{libname} = %{version}-%{release}
 
 %description -n %{girname}
 GObject Introspection interface description for %{name}.
@@ -47,6 +45,7 @@ Summary:       Development headers/libraries for %{name}
 Group:         Development/X11
 Provides:      %{name}-devel = %{version}-%{release}
 Requires:      %{libname} = %{version}-%{release}
+Requires:      %{girname} = %{version}-%{release}
 
 %description -n %{develname}
 Development headers/libraries for %{name} (see %{libname} package)
@@ -70,7 +69,6 @@ Documentation for Clutter-Gst
 %make
 
 %install
-rm -Rf %{buildroot}
 %makeinstall_std
 find %{buildroot} -name *.la | xargs rm
 
@@ -90,5 +88,4 @@ find %{buildroot} -name *.la | xargs rm
 %files doc
 %dir %{_datadir}/gtk-doc/html/%{name}
 %doc %{_datadir}/gtk-doc/html/%{name}/*
-
 
