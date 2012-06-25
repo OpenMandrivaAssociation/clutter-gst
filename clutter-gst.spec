@@ -1,13 +1,12 @@
-%define api 1.0
-%define major 0
-%define gir_major 1.0
+%define api	1.0
+%define major	0
 %define libname		%mklibname %{name} %{api} %{major}
 %define girname		%mklibname %{name}-gir %{api}
 %define develname	%mklibname -d %{name} %{api}
 
 Summary:	GST video texture actor and audio player object for Clutter
 Name:		clutter-gst
-Version:	1.5.6
+Version:	1.6.0
 Release:	1
 License:	LGPLv2+
 Group:		Graphics
