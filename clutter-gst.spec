@@ -14,6 +14,7 @@ Version:       %{version}
 Release:       %{release}
 Source0:       http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 Patch0:        clutter-gst-nogl.patch
+Patch1:        clutter-gst-automake-1.13.patch
 License:       LGPLv2+
 Group:         Graphics
 Url:           http://clutter-project.org/

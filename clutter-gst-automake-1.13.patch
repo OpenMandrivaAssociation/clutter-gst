@@ -1,0 +1,11 @@
+--- clutter-gst-1.6.0/configure.ac.bero	2013-01-15 18:58:43.603230854 +0100
++++ clutter-gst-1.6.0/configure.ac	2013-01-15 18:58:49.903154973 +0100
+@@ -23,7 +23,7 @@ AC_INIT([clutter-gst], [clutter_gst_vers
+ AC_CONFIG_MACRO_DIR([build/autotools])
+ AC_CONFIG_AUX_DIR([build/autotools])
+ AC_CONFIG_SRCDIR([clutter-gst/clutter-gst.h])
+-AM_CONFIG_HEADER([config.h])
++AC_CONFIG_HEADERS([config.h])
+ 
+ AM_INIT_AUTOMAKE([1.9 -Wno-portability foreign no-dist-gzip dist-xz tar-ustar])
+ 
