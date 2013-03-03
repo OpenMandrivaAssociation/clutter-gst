@@ -1,16 +1,21 @@
-%define url_ver %(echo %{version}|cut -d. -f1,2)
+%define api		2.0
+%define clutterapi	2.0
+%define gir_major	2.0
+%define major		0
 
-%define gstapi	1.0
-%define api	2.0
-%define major	0
-%define libname	%mklibname %{name} %{api} %{major}
-%define girname	%mklibname %{name}-gir %{api}
-%define devname	%mklibname -d %{name} %{api}
+%define gstapi		1.0
+
+%define libname		%mklibname clutter-gst %{api} %{major}
+%define devname		%mklibname -d clutter-gst %{api}
+%define girname		%mklibname clutter-gst-gir %{gir_major}
+%define gstname		gstreamer%{gstapi}-gstclutter
+
+%define	url_ver		%(echo %{version} | cut -d. -f1,2)
 
 Summary:	GST video texture actor and audio player object for Clutter
 Name:		clutter-gst
 Version:	2.0.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Graphics
 Url:		http://clutter-project.org/
@@ -22,28 +27,34 @@ BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gstreamer-plugins-base-%{gstapi})
+BuildRequires:	pkgconfig(gstreamer-%{gstapi})
+BuildRequires:	pkgconfig(gstreamer-plugins-base-%{gstapi})
+BuildRequires:	pkgconfig(gstreamer-base-%{gstapi})
+BuildRequires:	pkgconfig(gstreamer-video-%{gstapi})
+BuildRequires:	pkgconfig(gstreamer-audio-%{gstapi})
+BuildRequires:	pkgconfig(gstreamer-tag-%{gstapi})
 
 %description
 An integration library for using GStreamer with Clutter.
 GST video texture actor and audio player object.
 
-%package -n %{libname}
+%package -n	%{libname}
 Summary:	GST video texture actor and audio player object for Clutter
 Group:		Graphics
 Requires:	gstreamer%{gstapi}-plugins-base
 
-%description -n %{libname}
+%description -n	%{libname}
 An integration library for using GStreamer with Clutter.
 GST video texture actor and audio player object.
 
-%package -n %{girname}
+%package -n	%{girname}
 Summary:	GObject Introspection interface description for %{name}
 Group:		System/Libraries
 
-%description -n %{girname}
+%description -n	%{girname}
 GObject Introspection interface description for %{name}.
 
-%package -n %{devname}
+%package -n	%{devname}
 Summary:	Development headers/libraries for %{name}
 Group:		Development/X11
 Provides:	%{name}-devel = %{version}-%{release}
@@ -51,8 +62,16 @@ Requires:	%{libname} = %{version}-%{release}
 Requires:	%{girname} = %{version}-%{release}
 Obsoletes:	%{name}-doc
 
-%description -n %{devname}
+%description -n	%{devname}
 Development headers/libraries for %{name}.
+
+%package -n	%{gstname}
+Summary:	Gstreamer plugin for %{name}
+Group:		System/Libraries
+Conflicts:	%{libname} < 2.0.2-2
+
+%description -n	%{gstname}
+Standalone gstreamer plugin for %{name}.
 
 %prep
 %setup -q
@@ -70,7 +89,6 @@ Development headers/libraries for %{name}.
 
 %files -n %{libname}
 %{_libdir}/lib%{name}-%{api}.so.%{major}*
-%{_libdir}/gstreamer-%{gstapi}/libgstclutter.so
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/ClutterGst-%{api}.typelib
@@ -84,3 +102,5 @@ Development headers/libraries for %{name}.
 %dir %{_datadir}/gtk-doc/html/%{name}
 %doc %{_datadir}/gtk-doc/html/%{name}/*
 
+%files -n %{gstname}
+%{_libdir}/gstreamer-%{gstapi}/libgstclutter.so
