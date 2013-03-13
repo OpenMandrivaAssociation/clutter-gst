@@ -1,16 +1,12 @@
-%define api		2.0
-%define clutterapi	2.0
-%define gir_major	2.0
-%define major		0
+%define	url_ver	%(echo %{version} | cut -d. -f1,2)
 
-%define gstapi		1.0
-
-%define libname		%mklibname clutter-gst %{api} %{major}
-%define devname		%mklibname -d clutter-gst %{api}
-%define girname		%mklibname clutter-gst-gir %{gir_major}
-%define gstname		gstreamer%{gstapi}-gstclutter
-
-%define	url_ver		%(echo %{version} | cut -d. -f1,2)
+%define api	2.0
+%define major	0
+%define gstapi	1.0
+%define libname	%mklibname clutter-gst %{api} %{major}
+%define devname	%mklibname -d clutter-gst %{api}
+%define girname	%mklibname clutter-gst-gir %{api}
+%define gstname	gstreamer%{gstapi}-gstclutter
 
 Summary:	GST video texture actor and audio player object for Clutter
 Name:		clutter-gst
@@ -78,9 +74,9 @@ Standalone gstreamer plugin for %{name}.
 
 %build
 %configure2_5x \
-  --disable-static \
-  --enable-gtk-doc \
-  --enable-introspection
+	--disable-static \
+	--enable-gtk-doc \
+	--enable-introspection
 
 %make
 
