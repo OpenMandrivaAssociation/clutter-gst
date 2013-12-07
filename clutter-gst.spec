@@ -11,7 +11,7 @@
 Summary:	GST video texture actor and audio player object for Clutter
 Name:		clutter-gst
 Version:	2.0.2
-Release:	5
+Release:	6
 License:	LGPLv2+
 Group:		Graphics
 Url:		http://clutter-project.org/
