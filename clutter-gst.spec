@@ -1,6 +1,6 @@
 %define	url_ver	%(echo %{version} | cut -d. -f1,2)
 
-%define api	2.0
+%define api	3.0
 %define major	0
 %define gstapi	1.0
 %define libname	%mklibname clutter-gst %{api} %{major}
@@ -10,8 +10,8 @@
 
 Summary:	GST video texture actor and audio player object for Clutter
 Name:		clutter-gst
-Version:	2.0.2
-Release:	9
+Version:	2.99.4
+Release:	1
 License:	LGPLv2+
 Group:		Graphics
 Url:		http://clutter-project.org/
@@ -78,7 +78,7 @@ Standalone gstreamer plugin for %{name}.
 	--enable-gtk-doc \
 	--enable-introspection
 
-%make
+%make LIBS=-lm
 
 %install
 %makeinstall_std
@@ -95,8 +95,8 @@ Standalone gstreamer plugin for %{name}.
 %dir %{_includedir}/clutter-gst-%{api}/%{name}
 %{_includedir}/clutter-gst-%{api}/%{name}/*.h
 %{_datadir}/gir-1.0/ClutterGst-%{api}.gir
-%dir %{_datadir}/gtk-doc/html/%{name}
-%doc %{_datadir}/gtk-doc/html/%{name}/*
+%dir %{_datadir}/gtk-doc/html/%{name}-%{api}
+%doc %{_datadir}/gtk-doc/html/%{name}-%{api}/*
 
 %files -n %{gstname}
-%{_libdir}/gstreamer-%{gstapi}/libgstclutter.so
+%{_libdir}/gstreamer-%{gstapi}/libgstclutter-%{api}.so
