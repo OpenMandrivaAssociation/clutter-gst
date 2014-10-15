@@ -54,9 +54,9 @@ GObject Introspection interface description for %{name}.
 %package -n	%{devname}
 Summary:	Development headers/libraries for %{name}
 Group:		Development/X11
-Provides:	%{name}-devel = %{version}-%{release}
-Requires:	%{libname} = %{version}-%{release}
-Requires:	%{girname} = %{version}-%{release}
+Provides:	%{name}-devel = %{EVRD}
+Requires:	%{libname} = %{EVRD}
+Requires:	%{girname} = %{EVRD}
 Obsoletes:	%{name}-doc
 
 %description -n	%{devname}
