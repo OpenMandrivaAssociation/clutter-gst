@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   clutter-gst-2.0.12.tar.xz: da6249c6ce686ba74e459402774831f19672379f
+sources:
+  clutter-gst-2.0.14.tar.xz: e0238f44046877116c7361eab255d775807365ac
