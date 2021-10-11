@@ -77,15 +77,15 @@ Standalone gstreamer plugin for %{name}.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
-	--enable-gtk-doc \
+	--disable-gtk-doc \
 	--enable-introspection
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/lib%{name}-%{api}.so.%{major}*
