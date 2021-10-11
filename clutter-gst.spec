@@ -18,8 +18,8 @@ Group:		Graphics
 Url:		http://clutter-project.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/clutter-gst/%{url_ver}/%{name}-%{version}.tar.xz
 
-BuildRequires:	gtk-doc
-BuildRequires:	gtk-doc-mkpdf
+#BuildRequires:	gtk-doc
+#BuildRequires:	gtk-doc-mkpdf
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:  pkgconfig(cogl-1.0)
