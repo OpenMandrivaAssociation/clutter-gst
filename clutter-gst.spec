@@ -22,6 +22,7 @@ BuildRequires:	gtk-doc
 BuildRequires:	gtk-doc-mkpdf
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	pkgconfig(clutter-1.0)
+BuildRequires:  pkgconfig(cogl-1.0)
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
