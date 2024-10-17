@@ -15,7 +15,7 @@ Release:	4
 Epoch:		1
 License:	LGPLv2+
 Group:		Graphics
-Url:		http://clutter-project.org/
+Url:		https://clutter-project.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/clutter-gst/%{url_ver}/%{name}-%{version}.tar.xz
 
 #BuildRequires:	gtk-doc
