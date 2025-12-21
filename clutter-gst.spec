@@ -20,6 +20,11 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/clutter-gst/%{url_ver}/%{name}-%
 
 #BuildRequires:	gtk-doc
 #BuildRequires:	gtk-doc-mkpdf
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	pkgconfig(clutter-1.0)
 BuildRequires:  pkgconfig(cogl-1.0)
